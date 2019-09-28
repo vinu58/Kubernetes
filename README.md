@@ -20,23 +20,12 @@ Cluster configuration
 2. sudo apt install awscli
 
 3. s3cmd --configure
-      Access Key: xxxxxx
-      Secret Key: xxxxxx
-      Default Region: xxxxx
-      S3 Endpoint: s3.amazonaws.com
-      DNS-style bucket+hostname:port template for accessing a bucket: %(bucket)s.s3.amazonaws.com
-      Encryption password:
-      Path to GPG program: /usr/bin/gpg
       
 4. aws configure
-      AWS Access Key ID [None]: xxxxxxx
-      AWS Secret Access Key [None]: xxxxxxx
-      Default region name [None]: xxxxx
-      Default output format [None]: 
       
 6. s3cmd mb s3://xxxxxxxx
 
 7. vi .bashrc and add these lines at the end
-      export REGION=xxxxxx
-      export KOPS_STATE_STORE=s3://xxxxxx
-      export NAME=xxxxxxxxx.com
+    .. export REGION=xxxxxx
+    .. export KOPS_STATE_STORE=s3://xxxxxx
+    .. export NAME=xxxxxxxxx.com
