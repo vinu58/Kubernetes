@@ -29,3 +29,13 @@ Cluster configuration
     .. export REGION=xxxxxx
     .. export KOPS_STATE_STORE=s3://xxxxxx
     .. export NAME=xxxxxxxxx.com
+    
+8. kops create cluster --zones us-east-1c --cloud aws --topology public --networking calico --dns-zone k8s.local --dns public --master-size=t2.micro --master-count 1 --node-count 1 --node-size=t2.micro --name k8s.local --state s3://k8slocal
+
+9. kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
+
+10. kops create ig nodes-spot --role node --subnet us-east-1c --name=k8s.local --state s3://k8slocal
+
+11. kops update cluster --name k8s.local --state s3://k8slocal --yes
+
+12. kops validate cluster --state s3://k8slocal
