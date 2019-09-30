@@ -32,7 +32,7 @@ Cluster configuration
     
 8. kops create cluster --zones us-east-1c --cloud aws --topology public --networking calico --dns-zone k8s.local --dns public --master-size=t2.micro --master-count 1 --node-count 1 --node-size=t2.micro --name k8s.local --state s3://k8slocal
 
-9. kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
+9. kops create secret --name k8s.local sshpublickey admin -i ~/.ssh/id_rsa.pub
 
 10. kops create ig nodes-spot --role node --subnet us-east-1c --name=k8s.local --state s3://k8slocal
 
